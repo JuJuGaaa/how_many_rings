@@ -1,4 +1,4 @@
-<div class="card-generic">
+<div class="card-edit">
   <%= simple_form_for @offer do |f| %>
     <%= f.input :media_condition, collection: Offer::CONDITIONS, label: "État du jeu :" %>
     <%= f.input :box_condition, collection: Offer::CONDITIONS, label: "État de la boîte :" %>
@@ -8,10 +8,12 @@
     <%= f.input :price, label: "Prix en euros :" %>
     <%= f.input :description, label: "Description :" %>
     <% if @offer.photos.attached? %>
+      <p>Photo(s) actuelles :</p>
       <% @offer.photos.each do |photo| %>
         <%= cl_image_tag photo.key %>
       <% end %>
     <% end %>
+    <br><br>
     <%= f.label :photos, "Photo(s) : (facultatif)" %>
     <%= f.file_field :photos, multiple: true %>
     <br><br>

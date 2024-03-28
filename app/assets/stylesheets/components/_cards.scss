@@ -16,6 +16,17 @@
   overflow-y: scroll;
 }
 
+.card-edit {
+  margin-bottom: 8px;
+  border-radius: 5px;
+  background-color: rgba(256, 256, 256, 1);
+  padding: 8px;
+
+  & img {
+    width: 100%;
+  }
+}
+
 .card-game {
   display: flex;
   flex-direction: row;
